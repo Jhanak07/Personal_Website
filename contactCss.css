@@ -1,0 +1,263 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.content-section {
+    flex: 2;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Align items to the top */
+}
+
+/* SIDE NAVIGATION BAR */
+
+.side-nav {
+    position: absolute;
+    right: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    z-index: 100;
+}
+
+.side-nav li {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+    transition: all 0.3s ease;
+    color: #333;
+    font-weight: bold;
+    text-decoration: none;
+    position: relative;
+}
+
+.nav-item i {
+    font-size: 1.5em;
+    transition: opacity 0.3s ease;
+}
+
+.nav-item.active i {
+    color: #8cc63f; /* Green for active page */
+}
+
+.nav-item:hover {
+    width: 50px; /* Keep width the same */
+    justify-content: center; /* Center text */
+}
+
+.nav-item:hover i {
+    opacity: 0; /* Hide icon on hover */
+}
+
+.home-btn::before,
+.about-btn::before,
+.projects-btn::before,
+.contact-btn::before {
+    content: attr(data-text);
+    position: absolute;
+    left: 0;
+    right: 0;
+    text-align: center;
+    opacity: 0;
+    transition: all 0.3s ease;
+    font-weight: bold;
+}
+
+.home-btn:hover::before {
+    opacity: 1;
+    color: #333; 
+    font-size: small;
+}
+
+.about-btn:hover::before{
+    opacity: 1;
+    color: #333; 
+    font-size: small;
+}
+
+.projects-btn:hover::before{
+    opacity: 1;
+    color:  #333;
+    font-size: small;
+    
+}
+
+.contact-btn:hover::before{
+    opacity: 1;
+    color:  #8cc63f;
+    font-size: small;
+    
+}
+
+/* CONTENT */
+
+
+.heading-container {
+    position: relative;
+    text-align: center;
+    margin: 50px 0;
+}
+
+.background-text {
+    font-size: 7em; /* Smaller size */
+    color: #b0b0b0; /* Darker color */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    opacity: 0.2; /* Adjust for subtlety */
+    margin: 0;
+    
+}
+
+.foreground-text {
+    font-size: 4em; /* Larger size */
+    color: #333;
+    z-index: 2;
+    position: relative;
+    margin: 0;
+    font-weight: bold;
+}
+
+.green-text{
+    color: #8cc63f;
+    background: none;
+    padding: 0;
+    display: inline;
+    z-index: 2;
+    font-weight: bold;
+}
+
+.box{
+    padding: 10px;
+    padding-left: 380px;
+}
+
+
+.contact-container {
+    width: 100%;
+    max-width: 600px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 30px;
+    font-size: 1em;
+    color: #333;
+    outline: none;
+}
+
+textarea {
+    resize: none;
+    height: 150px;
+    border-radius: 10px;
+}
+
+.submit-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 20px;
+    background-color: #8cc63f;
+    color: #fff;
+    border: none;
+    border-radius: 30px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.submit-btn:hover {
+    background-color: #76a639;
+}
+
+.submit-btn i {
+    margin-left: 10px;
+}
+
+
+.social-links {
+    display: flex;
+    justify-content: center; /* Center the icons */
+    gap: 30px; /* Space between icons */
+    margin-top: 20px;
+}
+
+.social-icon {
+    color: #333; /* Black color */
+    font-size: 2.5em; /* Larger initial size */
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.social-icon:hover {
+    color: #8cc63f; /* Green color on hover */
+    font-size: 3em; /* Increase size on hover */
+}
+
+
+
+/*TRANISTION*/
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    transform: translateY(100%); /* Start from bottom */
+    transition: transform 0.3s ease-in-out;
+}
+
+.green {
+    background: #8cc63f;
+}
+
+.white {
+    background: white;
+    transition-delay: 0.1s;
+}
+
+.second {
+    transition-delay: 0.2s;
+}

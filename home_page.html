@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jhanak Gupta - Portfolio</title>
+    <meta name="description" content="Jhanak Gupta's portfolio website showcasing skills, projects, and contact information.">
+    <link rel="stylesheet" href="homePageCss.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+
+        <div class="photo-section">
+            <img src="IMG_2530.png" alt="Portrait of Jhanak Gupta">
+        </div>
+
+    
+        
+        <div class="content-section">
+
+            <ul class="side-nav">
+                <li><a href="home_page.html" class="nav-item home-btn active" data-text="HOME"><i class="fas fa-home"></i></a></li>
+                <li><a href="aboutMe.html" class="nav-item about-btn" data-text="ABOUT"><i class="fas fa-user"></i></a></li>
+                <li><a href="projects.html" class="nav-item projects-btn" data-text="PROJECTS"><i class="fas fa-briefcase"></i></a></li>
+                <li><a href="contact.html" class="nav-item contact-btn" data-text="CONTACT"><i class="fas fa-envelope"></i></a></li>
+            </ul>
+                      
+            <div class="intro">
+                <h1> — I'M JHANAK GUPTA.</h1>
+                <h2>DEVELOPER. RESEARCHER. CODER.</h2>
+                <p>I'm a passionate web designer focused on crafting clean and user-friendly experiences. I am passionate about building excellent software that improves the lives of those around me.</p>
+                
+                <div class="social-links">
+                    <a href="https://github.com/Jhanak07" target="_blank" class="social-icon">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/jhanakgupta07/" target="_blank" class="social-icon">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                </div>
+                  
+            </div>
+        </div>
+        <div class="overlay green"></div>
+        <div class="overlay white"></div>
+        <div class="overlay green second"></div>
+
+
+    </div>
+
+</body>
+
+<script>
+    function transitionToPage(url) {
+    const overlays = document.querySelectorAll('.overlay');
+    overlays.forEach((overlay, index) => {
+        setTimeout(() => {
+            overlay.style.transform = 'translateY(0)';
+        }, index * 300); // Adjust timing for each overlay
+    });
+
+    setTimeout(() => {
+        window.location.href = url;
+    }, 1200); // Adjust timing for the final transition
+}
+
+document.querySelectorAll('.nav-item').forEach(item => {
+    item.addEventListener('click', (e) => {
+        e.preventDefault();
+        const url = item.getAttribute('href');
+        transitionToPage(url);
+    });
+});
+
+
+</script>
+
+</html>

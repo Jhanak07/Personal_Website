@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Jhanak Gupta</title>
+    <link rel="stylesheet" href="contactCss.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+
+        <ul class="side-nav">
+            <li><a href="home_page.html" class="nav-item home-btn" data-text="HOME"><i class="fas fa-home"></i></a></li>
+            <li><a href="aboutMe.html" class="nav-item about-btn" data-text="ABOUT"><i class="fas fa-user"></i></a></li>
+            <li><a href="projects.html" class="nav-item projects-btn" data-text="PROJECTS"><i class="fas fa-briefcase"></i></a></li>
+            <li><a href="contact.html" class="nav-item contact-btn active" data-text="CONTACT"><i class="fas fa-envelope"></i></a></li>
+        </ul>   
+
+        <div class="content-section">
+            <div class="contact-section">
+                <div class="heading-container">
+                    <h1 class="background-text">CONTACT</h1>
+                    <h2 class="foreground-text">GET IN <span class="green-text">TOUCH</span></h2>
+                </div>
+                <div class = "box">
+                <div class="contact-container">
+                    <form id="contact-form">
+                        <div class="form-group">
+                            <input type="text" name="name" placeholder="YOUR NAME" required>
+                            <input type="email" name="email" placeholder="YOUR EMAIL" required>
+                            <input type="text" name="subject" placeholder="YOUR SUBJECT" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea name="message" placeholder="YOUR MESSAGE" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">SEND MESSAGE <i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+                </div>
+
+                <div class="social-links">
+                    <a href="https://github.com/Jhanak07" target="_blank" class="social-icon">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/jhanakgupta07/" target="_blank" class="social-icon">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+
+        <div class="overlay green"></div>
+        <div class="overlay white"></div>
+        <div class="overlay green second"></div>
+
+    </div>
+</body>
+
+<script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init("rCCae8VK7NDuEuVG2");
+   })();
+</script>
+
+<script>
+
+    function transitionToPage(url) {
+    const overlays = document.querySelectorAll('.overlay');
+    overlays.forEach((overlay, index) => {
+        setTimeout(() => {
+            overlay.style.transform = 'translateY(0)';
+        }, index * 300); // Adjust timing for each overlay
+    });
+
+    setTimeout(() => {
+        window.location.href = url;
+    }, 1200); // Adjust timing for the final transition
+}
+
+document.querySelectorAll('.nav-item').forEach(item => {
+    item.addEventListener('click', (e) => {
+        e.preventDefault();
+        const url = item.getAttribute('href');
+        transitionToPage(url);
+    });
+});
+
+document.getElementById('contact-form').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    emailjs.sendForm('service_q928nnl', 'template_y8qrzo4', this)
+        .then(function() {
+            alert('Message sent successfully!');
+        }, function(error) {
+            alert('Failed to send message: ' + JSON.stringify(error));
+        });
+});
+
+</script>
+
+</html>
