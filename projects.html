@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - Jhanak Gupta</title>
+    <link rel="stylesheet" href="projectsCss.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+
+        <ul class="side-nav">
+            <li><a href="home_page.html" class="nav-item home-btn" data-text="HOME"><i class="fas fa-home"></i></a></li>
+            <li><a href="aboutMe.html" class="nav-item about-btn" data-text="ABOUT"><i class="fas fa-user"></i></a></li>
+            <li><a href="projects.html" class="nav-item projects-btn active" data-text="PROJECTS"><i class="fas fa-briefcase"></i></a></li>
+            <li><a href="contact.html" class="nav-item contact-btn" data-text="CONTACT"><i class="fas fa-envelope"></i></a></li>
+        </ul>
+
+        <div class="content-section">
+            <div class="projects-section">
+                <div class="heading-container">
+                    <h1 class="background-text">PROJECTS</h1>
+                    <h2 class="foreground-text">MY <span class="green-text">PORTFOLIO</span></h2>
+                </div>
+                <div class="projects-grid">
+                    <div class="project-item1" onclick="showDescription(1)">
+                        <div class="project-overlay">
+                        </div>
+                        <img src="project1.webp" alt="Project 1">
+                        
+                    </div>
+                    <div class="project-item2" onclick="showDescription(2)">
+                        <div class="project-overlay">
+                            
+                        </div>
+                        <img src="project2.webp" alt="Project 2">
+                        
+                    </div>
+                    <div class="project-item3" onclick="showDescription(3)">
+                        <div class="project-overlay">
+                            
+                        </div>
+                        <img src="project3.webp" alt="Project 3">
+                        
+                    </div>
+                    <div class="project-item4" onclick="showDescription(4)">
+                        <div class="project-overlay">
+                            
+                        </div>
+                        <img src="project4.webp" alt="Project 4">
+                        
+                    </div>
+                </div>
+
+                
+
+            </div>
+        </div>
+        
+        <div id="description-box" class="description-box">
+            <span class="close" onclick="closeDescription()">&times;</span>
+            <div id="description-content"></div>
+        </div>
+        
+
+        <div class="overlay green"></div>
+        <div class="overlay white"></div>
+        <div class="overlay green second"></div>
+
+    </div>
+</body>
+
+<script>
+
+    function transitionToPage(url) {
+    const overlays = document.querySelectorAll('.overlay');
+    overlays.forEach((overlay, index) => {
+        setTimeout(() => {
+            overlay.style.transform = 'translateY(0)';
+        }, index * 300); // Adjust timing for each overlay
+    });
+
+    setTimeout(() => {
+        window.location.href = url;
+    }, 1200); // Adjust timing for the final transition
+}
+
+document.querySelectorAll('.nav-item').forEach(item => {
+    item.addEventListener('click', (e) => {
+        e.preventDefault();
+        const url = item.getAttribute('href');
+        transitionToPage(url);
+    });
+});
+
+function showDescription(projectId) {
+    const descriptions = [
+        {
+            title: "AI Resume Parser",
+            description: "Description of Project 1...",
+            tags: "#AI #Resume #Parser",
+            github: "https://github.com/your-repo1"
+        },
+        {
+            title: "Multi Agent Reinforcement Learning Algorithm",
+            description: "Description of Project 1...",
+            tags: "#AI #Resume #Parser",
+            github: "https://github.com/Jhanak07/Multi-Agent-Reinforcement-Learning"
+        },
+        {
+            title: "Data Analysis Using Machine Learning Algorithm",
+            description: "Description of Project 1...",
+            tags: "#AI #Resume #Parser",
+            github: "https://github.com/your-repo1"
+        },
+        {
+            title: "Personal Website",
+            description: "Description of Project 1...",
+            tags: "#AI #Resume #Parser",
+            github: "https://github.com/your-repo1"
+        }
+
+    ];
+
+    const project = descriptions[projectId - 1];
+    document.getElementById('description-content').innerHTML = `
+        <h2>${project.title}</h2>
+        <p>${project.description}</p>
+        <p class="tags">${project.tags}</p>
+        <a href="${project.github}" class="details-btn" target="_blank">DETAILS</a>
+    `;
+    document.getElementById('description-box').style.display = 'block';
+}
+
+function closeDescription() {
+    document.getElementById('description-box').style.display = 'none';
+}
+
+
+</script>
+
+</html>
