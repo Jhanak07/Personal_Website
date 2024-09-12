@@ -127,10 +127,39 @@ body {
 
 /*SIDE NAVIGATION BAR END*/
 
+/* Responsive Adjustments */
+@media (min-width: 768px) {
+    .container {
+        flex-direction: row;
+    }
+
+    .photo-section {
+        flex: 1;
+        padding-left: 40px;
+    }
+
+    .content-section {
+        flex: 2;
+        margin-right: 120px;
+        align-items: flex-start;
+    }
+
+    .side-nav {
+        flex-direction: column;
+        position: absolute;
+        right: 30px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    .side-nav li {
+        margin-bottom: 20px;
+    }
+}
 
 
 .intro {
-    padding-left: 80px;
+    text-align: center;
 }
 
 .intro h1 {
