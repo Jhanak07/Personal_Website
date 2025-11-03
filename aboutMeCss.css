@@ -428,3 +428,258 @@ body {
 .second {
     transition-delay: 0.2s;
 }
+
+/* MOBILE RESPONSIVE STYLES */
+
+/* Tablet view (768px - 1024px) */
+@media screen and (max-width: 1024px) {
+    .content-section {
+        padding: 20px 40px;
+    }
+
+    .background-text {
+        font-size: 5em;
+    }
+
+    .foreground-text {
+        font-size: 3em;
+    }
+
+    .education-section h2,
+    .Experience h2,
+    .Involvements h2 {
+        padding-left: 0;
+        text-align: center;
+    }
+
+    .education-card,
+    .hackathon-card,
+    .IBP-card,
+    .OA-card {
+        margin-left: 50px;
+        margin-right: 50px;
+    }
+
+    .timeline-item {
+        padding-left: 40px;
+    }
+
+    .side-nav {
+        right: 20px;
+    }
+}
+
+/* Mobile view (max-width: 767px) */
+@media screen and (max-width: 767px) {
+    body {
+        height: auto;
+    }
+
+    .container {
+        height: auto;
+    }
+
+    .content-section {
+        padding: 20px 15px;
+        padding-bottom: 100px;
+    }
+
+    .heading-container {
+        margin: 30px 0;
+    }
+
+    .background-text {
+        font-size: 3em;
+    }
+
+    .foreground-text {
+        font-size: 2em;
+    }
+
+    .education-section h2,
+    .Experience h2,
+    .Involvements h2 {
+        font-size: 1.5em;
+        padding-left: 0;
+        text-align: center;
+        margin-top: 30px;
+        margin-bottom: 20px;
+    }
+
+    .education-card,
+    .hackathon-card,
+    .IBP-card,
+    .OA-card {
+        flex-direction: column;
+        margin-left: 15px;
+        margin-right: 15px;
+        padding: 15px;
+        text-align: center;
+    }
+
+    .university-logo {
+        width: 150px;
+        margin-bottom: 15px;
+    }
+
+    .education-details,
+    .Hackathon-details,
+    .IBP-details,
+    .OA-details {
+        margin-left: 0;
+    }
+
+    .education-details h3,
+    .Hackathon-details h3,
+    .IBP-details h3,
+    .OA-details h3 {
+        font-size: 1.2em;
+    }
+
+    .education-details p,
+    .Hackathon-details p,
+    .IBP-details p,
+    .OA-details p {
+        font-size: 0.9em;
+    }
+
+    .timeline::before {
+        left: 15px;
+    }
+
+    .timeline-item {
+        padding-left: 35px;
+    }
+
+    .timeline-icon {
+        left: 0;
+        padding: 8px;
+        font-size: 1.2em;
+    }
+
+    .timeline-content {
+        padding: 10px 15px;
+    }
+
+    .timeline-content h2 {
+        font-size: 1em;
+    }
+
+    .timeline-content h3 {
+        font-size: 0.9em;
+    }
+
+    .timeline-content ul li {
+        font-size: 0.85em;
+        margin-bottom: 8px;
+    }
+
+    .skills-list {
+        flex-wrap: wrap;
+        gap: 5px;
+    }
+
+    .skills-list li {
+        font-size: 0.8em;
+        padding: 4px 8px;
+    }
+
+    .timeline-end {
+        width: 70%;
+        margin: 50px auto;
+    }
+
+    .IBP-card,
+    .OA-card {
+        margin-top: 20px;
+    }
+
+    .OA-card {
+        margin-bottom: 50px;
+    }
+
+    /* Mobile Navigation */
+    .side-nav {
+        position: fixed;
+        right: auto;
+        left: 50%;
+        top: auto;
+        bottom: 20px;
+        transform: translateX(-50%);
+        display: flex;
+        flex-direction: row;
+        background-color: rgba(255, 255, 255, 0.95);
+        padding: 10px 20px;
+        border-radius: 30px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        z-index: 1001;
+    }
+
+    .side-nav li {
+        margin-bottom: 0;
+        margin-right: 15px;
+    }
+
+    .side-nav li:last-child {
+        margin-right: 0;
+    }
+
+    .nav-item {
+        width: 45px;
+        height: 45px;
+    }
+
+    .nav-item i {
+        font-size: 1.3em;
+    }
+
+    /* Disable hover effects on mobile */
+    .nav-item:hover i {
+        opacity: 1;
+    }
+
+    .home-btn:hover::before,
+    .about-btn:hover::before,
+    .projects-btn:hover::before,
+    .contact-btn:hover::before {
+        opacity: 0;
+    }
+}
+
+/* Small mobile view (max-width: 480px) */
+@media screen and (max-width: 480px) {
+    .background-text {
+        font-size: 2.5em;
+    }
+
+    .foreground-text {
+        font-size: 1.5em;
+    }
+
+    .education-section h2,
+    .Experience h2,
+    .Involvements h2 {
+        font-size: 1.3em;
+    }
+
+    .university-logo {
+        width: 120px;
+    }
+
+    .side-nav {
+        padding: 8px 15px;
+    }
+
+    .side-nav li {
+        margin-right: 10px;
+    }
+
+    .nav-item {
+        width: 40px;
+        height: 40px;
+    }
+
+    .nav-item i {
+        font-size: 1.1em;
+    }
+}
